@@ -3,36 +3,35 @@
 <div class="row mt-5">
   <div class="col-12 col-md-8 me-4">
     <a
-      href="#"
+      href="/post/create"
       class="list-group-item list-group-item-action text-muted border rounded create-post"
     >
       Create Post
     </a>
-    <div class="card border mb-5 mt-3">
-      <div class="card-body">
-        <p class="card-text text-muted">posted by chuchu</p>
-        <h4 class="card-title">Headlines...</h4>
-        <p class="card-text card-content text-truncate">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim libero
-          modi itaque dignissimos delectus necessitatibus recusandae rerum
-          ratione voluptas distinctio dolorum nisi eveniet quos, sed nihil,
-          suscipit corrupti consequuntur reprehenderit.
-        </p>
+    <% for (let post of posts) {%>
+    <a href="/post/<%= post._id %>">
+      <div class="card border mb-5 mt-3">
+        <div class="card-body">
+          <p class="card-text text-muted">Post by anonymous</p>
+          <h4 class="card-title"><%= post.title %></h4>
+          <p class="card-text card-content text-truncate"><%= post.text %></p>
+        </div>
+        <div class="list-group d-flex flex-row text-center">
+          <a
+            href="#"
+            class="list-group-item list-group-item-action text-muted border-end"
+          >
+            Like
+          </a>
+          <a
+            href="/post/<%= post._id %>"
+            class="list-group-item list-group-item-action text-muted border-start"
+            >Comment</a
+          >
+        </div>
       </div>
-      <div class="list-group d-flex flex-row text-center">
-        <a
-          href="#"
-          class="list-group-item list-group-item-action text-muted border-end"
-        >
-          Like
-        </a>
-        <a
-          href="#"
-          class="list-group-item list-group-item-action text-muted border-start"
-          >Comment</a
-        >
-      </div>
-    </div>
+    </a>
+    <% } %>
   </div>
 
   <div class="d-none d-md-block col-md-3">

@@ -10,6 +10,16 @@ body {
   color: white;
 }
 
+a,
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  background-color: #423d3d;
+}
+
 .navbar {
   background-color: #1a1a1b;
 }

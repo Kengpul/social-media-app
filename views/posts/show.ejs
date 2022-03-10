@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate') -%>
+
+<div class="row">
+  <div class="col">
+    <div class="card border mb-5 mt-3">
+      <div class="card-body">
+        <p class="card-text text-muted">Post by anonymous</p>
+        <h4 class="card-title"><%= post.title %></h4>
+        <p class="card-text card-content"><%= post.text %></p>
+      </div>
+      <div class="list-group d-flex flex-row text-center align-items-center">
+        <a
+          href="#"
+          class="list-group-item list-group-item-action text-muted border-end"
+        >
+          Like
+        </a>
+        <a
+          href="#"
+          class="list-group-item list-group-item-action text-muted border-start"
+          >Comment</a
+        >
+        <a
+          href="/post/<%= post._id %>/edit"
+          class="list-group-item list-group-item-action text-muted border-start"
+          >Edit</a
+        >
+        <form
+          action="/post/<%= post._id %>?_method=DELETE"
+          method="POST"
+          class="list-group-item list-group-item-action border-start d-grid"
+        >
+          <button class="btn text-muted">Delete</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title text-muted">Anonymous</h5>
+        <p class="cart-text">Wow awesome</p>
+      </div>
+    </div>
+  </div>
+</div>
